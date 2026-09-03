@@ -7,7 +7,7 @@ cask "lofeline" do
   desc "Tiny pixel cat that naps in your menu bar and plays lofi beats"
   homepage "https://github.com/anttiak/lofeline-macos"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "LoFeline.app"
 
