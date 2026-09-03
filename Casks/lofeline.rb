@@ -11,5 +11,11 @@ cask "lofeline" do
 
   app "LoFeline.app"
 
+  # The app isn't notarized, so clear Gatekeeper quarantine on install.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/LoFeline.app"]
+  end
+
   zap trash: "~/Library/Preferences/io.github.anttiak.LoFeline.plist"
 end
